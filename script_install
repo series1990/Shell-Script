@@ -1,0 +1,5298 @@
+#!/bin/bash
+
+##MAINMENU##
+##################
+main_menu()
+{
+        clear && echo ""
+echo " _________  _________  _________  ___            ___  ________    _________  _________  _________  "
+echo "|  _____  ||___   ___|/  _____  \/   \          /   \|  _____ \  /  _____  \|___   ___|/  _____  \ "
+echo "| |     |_|    | |    | /     \ || |\ \        / /| || |     \ \ | /     \ |    | |    | /     \ | "
+echo "| |_______     | |    | |_____| || | \ \      / / | || |      | || |_____| |    | |    | |_____| | "
+echo "|_______  |    | |    |  _____  || |  \ \    / /  | || |      | ||  _____  |    | |    |  _____  | "
+echo " _      | |    | |    | |     | || |   \ \  / /   | || |      | || |     | |    | |    | |     | | "
+echo "| |_____| | ___| |___ | |     | || |    \ \/ /    | || |_____/ / | |     | |    | |    | |     | | "
+echo "|_________||_________||_|     |_||_|     \__/     |_||________/  |_|     |_|    |_|    |_|     |_| "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+	PS3="Select Number [1-4]:"
+	main_menu=("CentOS" "Ubuntu" "Debian" "Exit")
+	select os in "${main_menu[@]}"; do
+		if [ "$os" = "Exit" ]; then
+			echo "Thank you for using Program!" && sleep 3 && clear
+		exit 0
+		elif [ "$os" = "CentOS" ]; then
+	cent_menu
+		elif [ "$os" = "Ubuntu" ]; then
+	ubuntu_menu
+		elif [ "$os" = "Debian" ]; then
+	debian_nmenu
+		fi
+done
+}
+################
+
+##CentOS##
+##################
+cent_menu()
+{
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+	PS3="Select Number [1-3]:"
+	cent_menu=("CentOS 6" "CentOS 7" "Back")
+	select cent in "${cent_menu[@]}"; do
+		if [ "$cent" = "CentOS 6" ]; then
+	cent6_menu
+		elif [ "$cent" = "CentOS 7" ]; then
+	cent7_menu
+		elif [ "$cent" = "Back" ]; then
+	main_menu
+		fi
+done
+}
+################
+
+##CentOS6##
+##################
+cent6_menu()
+{
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+	PS3="Select Number [1-9]:"
+	cent6_menu=("Update&Standard" "Apache" "PHP" "MySQL" "phpMyAdmin" "Desktop" "Remote Desktop" "All Program" "Back")
+	select cent6 in "${cent6_menu[@]}"; do
+		if [ "$cent6" = "Update&Standard" ]; then
+	cent6_update_menu
+		elif [ "$cent6" = "Apache" ]; then
+	cent6_apache_menu
+		elif [ "$cent6" = "PHP" ]; then
+	cent6_php_menu
+		elif [ "$cent6" = "MySQL" ]; then
+	cent6_mysql_menu
+		elif [ "$cent6" = "phpMyAdmin" ]; then
+	cent6_phpmyadmin_menu
+		elif [ "$cent6" = "Desktop" ]; then
+	cent6_desktop_menu
+		elif [ "$cent6" = "Remote Desktop" ]; then
+	cent6_remote_menu
+		elif [ "$cent6" = "All Program" ]; then
+	cent6_all_menu
+		elif [ "$cent6" = "Back" ]; then
+	cent_menu
+		fi
+done
+}
+##################
+
+##CentOS6_Update##
+##################
+cent6_update_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Update & Install Standard "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Update & Install Standard? [y/n]: " -e -i n cent6_update
+if [[ "$cent6_update" = 'y' ]]; then
+	yum update -y
+	yum install epel* -y
+	yum install net-tools ntp wget git htop telnet tcpdump traceroute -y
+	service ntpd start
+	chkconfig ntpd on
+else
+	cent6_menu
+fi
+exit
+;;
+2)
+	cent6_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS6_Apache##
+##################
+cent6_apache_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Apache "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to install Apache? [y/n]: " -e -i n cent6_apache
+if [[ "$cent6_apache" = 'y' ]]; then
+	yum install epel* -y
+	yum install httpd -y
+	service httpd start
+	chkconfig httpd on
+else
+	cent6_menu
+fi
+exit
+;;
+2)
+	cent6_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS6_PHP##
+##################
+cent6_php_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install PHP Version 5.3 "
+echo " 2) Install PHP Version 5.4 "
+echo " 3) Install PHP Version 5.5 "
+echo " 4) Install PHP Version 5.6 "
+echo " 5) Back "
+read -p "Select an option [1-4]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to install PHP Version 5.3? [y/n]: " -e -i n cent6_php53
+if [[ "$cent6_php53" = 'y' ]]; then
+	wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+	wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+	rpm -Uvh epel-release-6-8.noarch.rpm
+	yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+	php -v
+else
+	cent6_php_menu
+fi
+exit
+;;
+2)
+read -p "Do you want to install PHP Version 5.4? [y/n]: " -e -i n cent6_php54
+if [[ "$cent6_php54" = 'y' ]]; then
+	wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+	wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+	rpm -Uvh epel-release-6-8.noarch.rpm
+	rpm -Uvh remi-release-6*.rpm
+	yum install yum-utils -y
+	yum-config-manager --enable remi-php54
+	yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+	php -v
+else
+	cent6_php_menu
+fi
+exit
+;;
+3)
+read -p "Do you want to install PHP Version 5.5? [y/n]: " -e -i n cent6_php55
+if [[ "$cent6_php55" = 'y' ]]; then
+	wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+	wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+	rpm -Uvh epel-release-6-8.noarch.rpm
+	rpm -Uvh remi-release-6*.rpm
+	yum install yum-utils -y
+	yum-config-manager --enable remi-php55
+	yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+	php -v
+else
+	cent6_php_menu
+fi
+exit
+;;
+4)
+read -p "Do you want to install PHP Version 5.6? [y/n]: " -e -i n cent6_php56
+if [[ "$cent6_php56" = 'y' ]]; then
+	wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+	wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+	rpm -Uvh epel-release-6-8.noarch.rpm
+	rpm -Uvh remi-release-6*.rpm
+	yum install yum-utils -y
+	yum-config-manager --enable remi-php56
+	yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+	php -v
+else
+	cent6_php_menu
+fi
+exit
+;;
+5)
+	cent6_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS6_MySQL##
+##################
+cent6_mysql_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install MySQL "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install MySQL? [y/n]: " -e -i n cent6_mysql
+if [[ "$cent6_mysql" = 'y' ]]; then
+	yum install epel* -y
+	yum install mysql-server mysql -y
+	service mysqld start
+	chkconfig mysqld on
+	/usr/bin/mysql_secure_installation
+	service mysqld restart
+else
+	cent6_menu
+fi
+exit
+;;
+2)
+	cent6_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS6_phpMyAdmin##
+##################
+cent6_phpmyadmin_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install phpMyAdmin "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to install phpMyAdmin? [y/n]: " -e -i n cent6_phpmyadmin
+if [[ "$cent6_phpmyadmin" = 'y' ]]; then
+yum install epel* -y
+yum install phpmyadmin -y
+PHPMYADMIN="All"
+DIR_PHPMYADMIN=/etc/httpd/conf.d/
+echo "# phpMyAdmin - Web based MySQL browser written in php
+#
+# Allows only localhost by default
+#
+# But allowing phpMyAdmin to anyone other than localhost should be considered
+# dangerous unless properly secured by SSL
+
+Alias /phpMyAdmin /usr/share/phpMyAdmin
+Alias /phpmyadmin /usr/share/phpMyAdmin
+
+<Directory /usr/share/phpMyAdmin/>
+   AddDefaultCharset UTF-8
+
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Allow from $PHPMYADMIN
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/>
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Deny from All
+     Allow from 127.0.0.1
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+# These directories do not require access over HTTP - taken from the original
+# phpMyAdmin upstream tarball
+#
+<Directory /usr/share/phpMyAdmin/libraries/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/lib/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/frames/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+# This configuration prevents mod_security at phpMyAdmin directories from
+# filtering SQL etc.  This may break your mod_security implementation.
+#
+#<IfModule mod_security.c>
+#    <Directory /usr/share/phpMyAdmin/>
+#        SecRuleInheritance Off
+#    </Directory>
+#</IfModule>" > $DIR_PHPMYADMIN/phpMyAdmin.conf
+service httpd restart
+else
+	cent6_menu
+fi
+exit
+;;
+2)
+	cent6_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS6_Desktop##
+##################
+cent6_desktop_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Desktop "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install Desktop? [y/n]: " -e -i n cent6_desktop
+if [[ "$cent6_desktop" = 'y' ]]; then
+yum install epel* -y
+yum groupinstall "Desktop" "X Window System" -y
+DESKTOP="5"
+DIR_DESKTOP=/etc/
+echo "# inittab is only used by upstart for the default runlevel.
+#
+# ADDING OTHER CONFIGURATION HERE WILL HAVE NO EFFECT ON YOUR SYSTEM.
+#
+# System initialization is started by /etc/init/rcS.conf
+#
+# Individual runlevels are started by /etc/init/rc.conf
+#
+# Ctrl-Alt-Delete is handled by /etc/init/control-alt-delete.conf
+#
+# Terminal gettys are handled by /etc/init/tty.conf and /etc/init/serial.conf,
+# with configuration in /etc/sysconfig/init.
+#
+# For information on how to write upstart event handlers, or how
+# upstart works, see init(5), init(8), and initctl(8).
+#
+# Default runlevel. The runlevels used are:
+#   0 - halt (Do NOT set initdefault to this)
+#   1 - Single user mode
+#   2 - Multiuser, without NFS (The same as 3, if you do not have networking)
+#   3 - Full multiuser mode
+#   4 - unused
+#   5 - X11
+#   6 - reboot (Do NOT set initdefault to this)
+#
+id:$DESKTOP:initdefault:" > $DIR_DESKTOP/inittab
+cd /etc/
+init 6
+else
+	cent6_menu
+fi
+exit
+;;
+2)
+	cent6_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS6_Remote_Desktop##
+##################
+cent6_remote_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Remote Desktop "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install Remote Desktop? [y/n]: " -e -i n cent6_remote
+if [[ "$cent6_remote" = 'y' ]]; then
+RESOLV="nameserver 103.22.180.7"
+RESOLV1="nameserver 103.22.180.8"
+DIR_RESOLV=/etc/
+echo "# Generated by NetworkManager
+$RESOLV
+$RESOLV1
+# No nameservers found; try putting DNS servers into your
+# ifcfg files in /etc/sysconfig/network-scripts like so:
+#
+# DNS1=xxx.xxx.xxx.xxx
+# DNS2=xxx.xxx.xxx.xxx
+# DOMAIN=lab.foo.com bar.foo.com" > $DIR_RESOLV/resolv.conf
+rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum install xrdp tigervnc-server -y
+service xrdp start
+chkconfig xrdp on
+chkconfig vncserver on
+else
+	cent6_menu
+fi
+exit
+;;
+2)
+cent6_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS6_All_Program##
+##################
+cent6_all_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install All Program & PHP Version 5.3 "
+echo " 2) Install All Program & PHP Version 5.4 "
+echo " 3) Install All Program & PHP Version 5.5 "
+echo " 4) Install All Program & PHP Version 5.6 "
+echo " 5) Back "
+read -p "Select an option [1-5]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install All Program & PHP Version 5.3? [y/n]: " -e -i n cent6_all_php53
+if [[ "$cent6_all_php53" = 'y' ]]; then
+yum update -y
+yum install epel* -y
+yum install net-tools ntp wget git htop telnet tcpdump traceroute -y
+service ntpd start
+chkconfig ntpd on
+#Apache
+yum install epel* -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+#PHP
+wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+rpm -Uvh epel-release-6-8.noarch.rpm
+yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+php -v
+#MySQL
+yum install epel* -y
+yum install mysql-server mysql -y
+service mysqld start
+chkconfig mysqld on
+/usr/bin/mysql_secure_installation
+service mysqld restart
+#phpMyAdmin
+yum install epel* -y
+yum install phpmyadmin -y
+PHPMYADMIN="All"
+DIR_PHPMYADMIN=/etc/httpd/conf.d/
+echo "# phpMyAdmin - Web based MySQL browser written in php
+#
+# Allows only localhost by default
+#
+# But allowing phpMyAdmin to anyone other than localhost should be considered
+# dangerous unless properly secured by SSL
+
+Alias /phpMyAdmin /usr/share/phpMyAdmin
+Alias /phpmyadmin /usr/share/phpMyAdmin
+
+<Directory /usr/share/phpMyAdmin/>
+   AddDefaultCharset UTF-8
+
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Allow from $PHPMYADMIN
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/>
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Deny from All
+     Allow from 127.0.0.1
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+# These directories do not require access over HTTP - taken from the original
+# phpMyAdmin upstream tarball
+#
+<Directory /usr/share/phpMyAdmin/libraries/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/lib/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/frames/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+# This configuration prevents mod_security at phpMyAdmin directories from
+# filtering SQL etc.  This may break your mod_security implementation.
+#
+#<IfModule mod_security.c>
+#    <Directory /usr/share/phpMyAdmin/>
+#        SecRuleInheritance Off
+#    </Directory>
+#</IfModule>" > $DIR_PHPMYADMIN/phpMyAdmin.conf
+service httpd restart
+#Remote
+rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum install xrdp tigervnc-server -y
+service xrdp start
+chkconfig xrdp on
+chkconfig vncserver on
+#Desktop
+yum install epel* -y
+yum groupinstall "Desktop" "X Window System" -y
+DESKTOP="5"
+DIR_DESKTOP=/etc/
+echo "# inittab is only used by upstart for the default runlevel.
+#
+# ADDING OTHER CONFIGURATION HERE WILL HAVE NO EFFECT ON YOUR SYSTEM.
+#
+# System initialization is started by /etc/init/rcS.conf
+#
+# Individual runlevels are started by /etc/init/rc.conf
+#
+# Ctrl-Alt-Delete is handled by /etc/init/control-alt-delete.conf
+#
+# Terminal gettys are handled by /etc/init/tty.conf and /etc/init/serial.conf,
+# with configuration in /etc/sysconfig/init.
+#
+# For information on how to write upstart event handlers, or how
+# upstart works, see init(5), init(8), and initctl(8).
+#
+# Default runlevel. The runlevels used are:
+#   0 - halt (Do NOT set initdefault to this)
+#   1 - Single user mode
+#   2 - Multiuser, without NFS (The same as 3, if you do not have networking)
+#   3 - Full multiuser mode
+#   4 - unused
+#   5 - X11
+#   6 - reboot (Do NOT set initdefault to this)
+#
+id:$DESKTOP:initdefault:" > $DIR_DESKTOP/inittab
+cd /etc/
+init 6
+else
+	cent6_menu
+fi
+exit
+;;
+2)
+read -p "Do you want to Install All Program & PHP Version 5.4? [y/n]: " -e -i n cent6_all_php54
+if [[ "$cent6_all_php54" = 'y' ]]; then
+yum update -y
+yum install epel* -y
+yum install net-tools ntp wget git htop telnet tcpdump traceroute -y
+service ntpd start
+chkconfig ntpd on
+#Apache
+yum install epel* -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+#PHP
+wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+rpm -Uvh epel-release-6-8.noarch.rpm
+rpm -Uvh remi-release-6*.rpm
+yum install yum-utils -y
+yum-config-manager --enable remi-php54
+yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+php -v
+#MySQL
+yum install epel* -y
+yum install mysql-server mysql -y
+service mysqld start
+chkconfig mysqld on
+/usr/bin/mysql_secure_installation
+service mysqld restart
+#phpMyAdmin
+yum install epel* -y
+yum install phpmyadmin -y
+PHPMYADMIN="All"
+DIR_PHPMYADMIN=/etc/httpd/conf.d/
+echo "# phpMyAdmin - Web based MySQL browser written in php
+#
+# Allows only localhost by default
+#
+# But allowing phpMyAdmin to anyone other than localhost should be considered
+# dangerous unless properly secured by SSL
+
+Alias /phpMyAdmin /usr/share/phpMyAdmin
+Alias /phpmyadmin /usr/share/phpMyAdmin
+
+<Directory /usr/share/phpMyAdmin/>
+   AddDefaultCharset UTF-8
+
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Allow from $PHPMYADMIN
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/>
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Deny from All
+     Allow from 127.0.0.1
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+# These directories do not require access over HTTP - taken from the original
+# phpMyAdmin upstream tarball
+#
+<Directory /usr/share/phpMyAdmin/libraries/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/lib/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/frames/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+# This configuration prevents mod_security at phpMyAdmin directories from
+# filtering SQL etc.  This may break your mod_security implementation.
+#
+#<IfModule mod_security.c>
+#    <Directory /usr/share/phpMyAdmin/>
+#        SecRuleInheritance Off
+#    </Directory>
+#</IfModule>" > $DIR_PHPMYADMIN/phpMyAdmin.conf
+service httpd restart
+#Remote
+rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum install xrdp tigervnc-server -y
+service xrdp start
+chkconfig xrdp on
+chkconfig vncserver on
+#Desktop
+yum install epel* -y
+yum groupinstall "Desktop" "X Window System" -y
+DESKTOP="5"
+DIR_DESKTOP=/etc/
+echo "# inittab is only used by upstart for the default runlevel.
+#
+# ADDING OTHER CONFIGURATION HERE WILL HAVE NO EFFECT ON YOUR SYSTEM.
+#
+# System initialization is started by /etc/init/rcS.conf
+#
+# Individual runlevels are started by /etc/init/rc.conf
+#
+# Ctrl-Alt-Delete is handled by /etc/init/control-alt-delete.conf
+#
+# Terminal gettys are handled by /etc/init/tty.conf and /etc/init/serial.conf,
+# with configuration in /etc/sysconfig/init.
+#
+# For information on how to write upstart event handlers, or how
+# upstart works, see init(5), init(8), and initctl(8).
+#
+# Default runlevel. The runlevels used are:
+#   0 - halt (Do NOT set initdefault to this)
+#   1 - Single user mode
+#   2 - Multiuser, without NFS (The same as 3, if you do not have networking)
+#   3 - Full multiuser mode
+#   4 - unused
+#   5 - X11
+#   6 - reboot (Do NOT set initdefault to this)
+#
+id:$DESKTOP:initdefault:" > $DIR_DESKTOP/inittab
+cd /etc/
+init 6
+else
+	cent6_menu
+fi
+exit
+;;
+3)
+read -p "Do you want to Install All Program & PHP Version 5.5? [y/n]: " -e -i n cent6_all_php55
+if [[ "$cent6_all_php55" = 'y' ]]; then
+yum update -y
+yum install epel* -y
+yum install net-tools ntp wget git htop telnet tcpdump traceroute -y
+service ntpd start
+chkconfig ntpd on
+#Apache
+yum install epel* -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+#PHP
+wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+rpm -Uvh epel-release-6-8.noarch.rpm
+rpm -Uvh remi-release-6*.rpm
+yum install yum-utils -y
+yum-config-manager --enable remi-php55
+yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+php -v
+#MySQL
+yum install epel* -y
+yum install mysql-server mysql -y
+service mysqld start
+chkconfig mysqld on
+/usr/bin/mysql_secure_installation
+service mysqld restart
+#phpMyAdmin
+yum install epel* -y
+yum install phpmyadmin -y
+PHPMYADMIN="All"
+DIR_PHPMYADMIN=/etc/httpd/conf.d/
+echo "# phpMyAdmin - Web based MySQL browser written in php
+#
+# Allows only localhost by default
+#
+# But allowing phpMyAdmin to anyone other than localhost should be considered
+# dangerous unless properly secured by SSL
+
+Alias /phpMyAdmin /usr/share/phpMyAdmin
+Alias /phpmyadmin /usr/share/phpMyAdmin
+
+<Directory /usr/share/phpMyAdmin/>
+   AddDefaultCharset UTF-8
+
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Allow from $PHPMYADMIN
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/>
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Deny from All
+     Allow from 127.0.0.1
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+# These directories do not require access over HTTP - taken from the original
+# phpMyAdmin upstream tarball
+#
+<Directory /usr/share/phpMyAdmin/libraries/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/lib/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/frames/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+# This configuration prevents mod_security at phpMyAdmin directories from
+# filtering SQL etc.  This may break your mod_security implementation.
+#
+#<IfModule mod_security.c>
+#    <Directory /usr/share/phpMyAdmin/>
+#        SecRuleInheritance Off
+#    </Directory>
+#</IfModule>" > $DIR_PHPMYADMIN/phpMyAdmin.conf
+service httpd restart
+#Remote
+rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum install xrdp tigervnc-server -y
+service xrdp start
+chkconfig xrdp on
+chkconfig vncserver on
+#Desktop
+yum install epel* -y
+yum groupinstall "Desktop" "X Window System" -y
+DESKTOP="5"
+DIR_DESKTOP=/etc/
+echo "# inittab is only used by upstart for the default runlevel.
+#
+# ADDING OTHER CONFIGURATION HERE WILL HAVE NO EFFECT ON YOUR SYSTEM.
+#
+# System initialization is started by /etc/init/rcS.conf
+#
+# Individual runlevels are started by /etc/init/rc.conf
+#
+# Ctrl-Alt-Delete is handled by /etc/init/control-alt-delete.conf
+#
+# Terminal gettys are handled by /etc/init/tty.conf and /etc/init/serial.conf,
+# with configuration in /etc/sysconfig/init.
+#
+# For information on how to write upstart event handlers, or how
+# upstart works, see init(5), init(8), and initctl(8).
+#
+# Default runlevel. The runlevels used are:
+#   0 - halt (Do NOT set initdefault to this)
+#   1 - Single user mode
+#   2 - Multiuser, without NFS (The same as 3, if you do not have networking)
+#   3 - Full multiuser mode
+#   4 - unused
+#   5 - X11
+#   6 - reboot (Do NOT set initdefault to this)
+#
+id:$DESKTOP:initdefault:" > $DIR_DESKTOP/inittab
+cd /etc/
+init 6
+else
+	cent6_menu
+fi
+exit
+;;
+4)
+read -p "Do you want to Install All Program & PHP Version 5.6? [y/n]: " -e -i n cent6_all_php56
+if [[ "$cent6_all_php56" = 'y' ]]; then
+yum update -y
+yum install epel* -y
+yum install net-tools ntp wget git htop telnet tcpdump traceroute -y
+service ntpd start
+chkconfig ntpd on
+#Apache
+yum install epel* -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+#PHP
+wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+rpm -Uvh epel-release-6-8.noarch.rpm
+rpm -Uvh remi-release-6*.rpm
+yum install yum-utils -y
+yum-config-manager --enable remi-php56
+yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+php -v
+#MySQL
+yum install epel* -y
+yum install mysql-server mysql -y
+service mysqld start
+chkconfig mysqld on
+/usr/bin/mysql_secure_installation
+service mysqld restart
+#phpMyAdmin
+yum install epel* -y
+yum install phpmyadmin -y
+PHPMYADMIN="All"
+DIR_PHPMYADMIN=/etc/httpd/conf.d/
+echo "# phpMyAdmin - Web based MySQL browser written in php
+#
+# Allows only localhost by default
+#
+# But allowing phpMyAdmin to anyone other than localhost should be considered
+# dangerous unless properly secured by SSL
+
+Alias /phpMyAdmin /usr/share/phpMyAdmin
+Alias /phpmyadmin /usr/share/phpMyAdmin
+
+<Directory /usr/share/phpMyAdmin/>
+   AddDefaultCharset UTF-8
+
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Allow from $PHPMYADMIN
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/>
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Deny from All
+     Allow from 127.0.0.1
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+# These directories do not require access over HTTP - taken from the original
+# phpMyAdmin upstream tarball
+#
+<Directory /usr/share/phpMyAdmin/libraries/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/lib/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/frames/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+# This configuration prevents mod_security at phpMyAdmin directories from
+# filtering SQL etc.  This may break your mod_security implementation.
+#
+#<IfModule mod_security.c>
+#    <Directory /usr/share/phpMyAdmin/>
+#        SecRuleInheritance Off
+#    </Directory>
+#</IfModule>" > $DIR_PHPMYADMIN/phpMyAdmin.conf
+service httpd restart
+#Remote
+rpm -Uvh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum install xrdp tigervnc-server -y
+service xrdp start
+chkconfig xrdp on
+chkconfig vncserver on
+#Desktop
+yum install epel* -y
+yum groupinstall "Desktop" "X Window System" -y
+DESKTOP="5"
+DIR_DESKTOP=/etc/
+echo "# inittab is only used by upstart for the default runlevel.
+#
+# ADDING OTHER CONFIGURATION HERE WILL HAVE NO EFFECT ON YOUR SYSTEM.
+#
+# System initialization is started by /etc/init/rcS.conf
+#
+# Individual runlevels are started by /etc/init/rc.conf
+#
+# Ctrl-Alt-Delete is handled by /etc/init/control-alt-delete.conf
+#
+# Terminal gettys are handled by /etc/init/tty.conf and /etc/init/serial.conf,
+# with configuration in /etc/sysconfig/init.
+#
+# For information on how to write upstart event handlers, or how
+# upstart works, see init(5), init(8), and initctl(8).
+#
+# Default runlevel. The runlevels used are:
+#   0 - halt (Do NOT set initdefault to this)
+#   1 - Single user mode
+#   2 - Multiuser, without NFS (The same as 3, if you do not have networking)
+#   3 - Full multiuser mode
+#   4 - unused
+#   5 - X11
+#   6 - reboot (Do NOT set initdefault to this)
+#
+id:$DESKTOP:initdefault:" > $DIR_DESKTOP/inittab
+cd /etc/
+init 6
+else
+	cent6_menu
+fi
+exit
+;;
+5)
+	cent6_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS7##
+##################
+cent7_menu()
+{
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+	PS3="Select Number [1-9]:"
+	cent7_menu=("Update&Standard" "Apache" "PHP" "MySQL" "phpMyAdmin" "Desktop" "Remote Desktop" "All Program" "Back")
+	select cent7 in "${cent7_menu[@]}"; do
+		if [ "$cent7" = "Update&Standard" ]; then
+	cent7_update_menu
+		elif [ "$cent7" = "Apache" ]; then
+	cent7_apache_menu
+		elif [ "$cent7" = "PHP" ]; then
+	cent7_php_menu
+		elif [ "$cent7" = "MySQL" ]; then
+	cent7_mysql_menu
+		elif [ "$cent7" = "phpMyAdmin" ]; then
+	cent7_phpmyadmin_menu
+		elif [ "$cent7" = "Desktop" ]; then
+	cent7_desktop_menu
+		elif [ "$cent7" = "Remote Desktop" ]; then
+	cent7_remote_menu
+		elif [ "$cent7" = "All Program" ]; then
+	cent7_all_menu
+		elif [ "$cent7" = "Back" ]; then
+	cent_menu
+		fi
+done
+}
+################
+
+##CentOS7_Update##
+##################
+cent7_update_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Update & Install Standard "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Update & Install Standard? [y/n]: " -e -i n cent7_update
+if [[ "$cent7_update" = 'y' ]]; then
+	yum update -y
+	yum install epel* -y
+	yum install net-tools iptables-services ntp wget git htop telnet tcpdump traceroute -y
+	systemctl start ntpd
+	systemctl enable ntpd
+else
+	cent7_menu
+fi
+exit
+;;
+2)
+	cent7_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS7_Apache##
+##################
+cent7_apache_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Apache "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to install Apache? [y/n]: " -e -i n cent7_apache
+if [[ "$cent7_apache" = 'y' ]]; then
+	yum install epel* -y
+	yum install httpd -y
+	systemctl start httpd
+	systemctl enable httpd
+else
+	cent7_menu
+fi
+exit
+;;
+2)
+	cent7_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS7_PHP##
+##################
+cent7_php_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install PHP Version 5.4 "
+echo " 2) Install PHP Version 5.5 "
+echo " 3) Install PHP Version 5.6 "
+echo " 4) Install PHP Version 7.1 "
+echo " 5) Install PHP Version 7.2 "
+echo " 6) Back "
+read -p "Select an option [1-6]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to install PHP Version 5.4? [y/n]: " -e -i n cent7_php54
+if [[ "$cent7_php54" = 'y' ]]; then
+	yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y
+	yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+	yum install yum-utils -y
+	yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+	php -v
+else
+	cent7_php_menu
+fi
+exit
+;;
+2)
+read -p "Do you want to install PHP Version 5.5? [y/n]: " -e -i n cent7_php55
+if [[ "$cent7_php55" = 'y' ]]; then
+	yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y
+	yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+	yum install yum-utils -y
+	yum-config-manager --enable remi-php55
+	yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+	php -v
+else
+	cent7_php_menu
+fi
+exit
+;;
+3)
+read -p "Do you want to install PHP Version 5.6? [y/n]: " -e -i n cent7_php56
+if [[ "$cent7_php56" = 'y' ]]; then
+	yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y
+	yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+	yum install yum-utils -y
+	yum-config-manager --enable remi-php56
+	yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+	php -v
+else
+	cent7_php_menu
+fi
+exit
+;;
+4)
+read -p "Do you want to install PHP Version 7.1? [y/n]: " -e -i n cent7_php71
+if [[ "$cent7_php71" = 'y' ]]; then
+	yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y
+	yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+	yum install yum-utils -y
+	yum-config-manager --enable remi-php71
+	yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+	php -v
+else
+	cent7_php_menu
+fi
+exit
+;;
+5)
+read -p "Do you want to install PHP Version 7.2? [y/n]: " -e -i n cent7_php72
+if [[ "$cent7_php72" = 'y' ]]; then
+	yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y
+	yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+	yum install yum-utils -y
+	yum-config-manager --enable remi-php72
+	yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+	php -v
+else
+	cent7_php_menu
+fi
+exit
+;;
+6)
+	cent7_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS7_MySQL##
+##################
+cent7_mysql_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install MySQL "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install MySQL? [y/n]: " -e -i n cent7_mysql
+if [[ "$cent7_mysql" = 'y' ]]; then
+	yum install epel* -y
+	yum install mariadb-server mariadb -y
+	systemctl start mariadb
+	systemctl enable mariadb
+	/usr/bin/mysql_secure_installation
+	systemctl restart mariadb
+else
+	cent7_menu
+fi
+exit
+;;
+2)
+	cent7_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS7_phpMyAdmin##
+##################
+cent7_phpmyadmin_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install phpMyAdmin "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to install phpMyAdmin? [y/n]: " -e -i n cent7_phpmyadmin
+if [[ "$cent7_phpmyadmin" = 'y' ]]; then
+yum install epel* -y
+yum install phpmyadmin -y
+PHPMYADMIN="<Directory /usr/share/phpMyAdmin/>
+        Options none
+        AllowOverride Limit
+        Require all granted
+</Directory>"
+DIR_PHPMYADMIN=/etc/httpd/conf.d/
+echo "# phpMyAdmin - Web based MySQL browser written in php
+#
+# Allows only localhost by default
+#
+# But allowing phpMyAdmin to anyone other than localhost should be considered
+# dangerous unless properly secured by SSL
+
+Alias /phpMyAdmin /usr/share/phpMyAdmin
+Alias /phpmyadmin /usr/share/phpMyAdmin
+
+#<Directory /usr/share/phpMyAdmin/>
+#   AddDefaultCharset UTF-8
+#
+#   <IfModule mod_authz_core.c>
+#     # Apache 2.4
+#     <RequireAny>
+#       Require ip 127.0.0.1
+#       Require ip ::1
+#     </RequireAny>
+#   </IfModule>
+#   <IfModule !mod_authz_core.c>
+#     # Apache 2.2
+#     Order Deny,Allow
+#     Deny from All
+#     Allow from 127.0.0.1
+#     Allow from ::1
+#   </IfModule>
+#</Directory>
+
+$PHPMYADMIN
+
+<Directory /usr/share/phpMyAdmin/setup/>
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Deny from All
+     Allow from 127.0.0.1
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+# These directories do not require access over HTTP - taken from the original
+# phpMyAdmin upstream tarball
+#
+<Directory /usr/share/phpMyAdmin/libraries/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/lib/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/frames/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+# This configuration prevents mod_security at phpMyAdmin directories from
+# filtering SQL etc.  This may break your mod_security implementation.
+#
+#<IfModule mod_security.c>
+#    <Directory /usr/share/phpMyAdmin/>
+#        SecRuleInheritance Off
+#    </Directory>
+#</IfModule>" > $DIR_PHPMYADMIN/phpMyAdmin.conf
+systemctl restart httpd
+else
+	cent7_menu
+fi
+exit
+;;
+2)
+	cent7_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS7_Desktop##
+##################
+cent7_desktop_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Desktop "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install Desktop? [y/n]: " -e -i n cent7_desktop
+if [[ "$cent7_desktop" = 'y' ]]; then
+	yum install epel* -y
+	yum groupinstall "GNOME Desktop" "Graphical Administration Tools" -y
+	ln -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target
+	reboot
+else
+	cent7_menu
+fi
+exit
+;;
+2)
+	cent7_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS7_Remote_Desktop##
+##################
+cent7_remote_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Remote Desktop "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install Remote Desktop? [y/n]: " -e -i n cent7_remote
+if [[ "$cent7_remote" = 'y' ]]; then
+	rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+	yum install xrdp tigervnc-server -y
+	systemctl start xrdp
+	systemctl enable xrdp
+else
+	cent7_menu
+fi
+exit
+;;
+2)
+	cent7_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##CentOS7_All_Program##
+##################
+cent7_all_menu()
+{
+while :
+do
+        clear && echo ""
+echo "                  ..                                                      "
+echo "                .PLTJ.                                                    "
+echo "               <><><><>                                                   "
+echo "      KKSSV' 4KKK LJ KKKL.'VSSKK           CCCC  EEEEEE  NN   NN  TTTTTT  "
+echo "      KKV' 4KKKKK LJ KKKKAL 'VKK         CC      EE      NNN  NN    TT    "
+echo "      V' ' 'VKKKK LJ KKKKV' ' 'V        CC       EEEEE   NNNN NN    TT    "
+echo "      .4MA.' 'VKK LJ KKV' '.4Mb.         CC      EE      NN NNNN    TT    "
+echo "    . KKKKKA.' 'V LJ V' '.4KKKKK .         CCCC  EEEEEE  NN   NN    TT    "
+echo "  .4D KKKKKKKA.'' LJ ''.4KKKKKKK FA.                                      "
+echo " <QDD ++++++++++++  ++++++++++++ GFD>                                     "
+echo "  'VD KKKKKKKK'.. LJ ..'KKKKKKKK FV                                       "
+echo "    ' VKKKKK'. .4 LJ K. .'KKKKKV '                                        "
+echo "       'VK'. .4KK LJ KKA. .'KV'                                           "
+echo "      A. . .4KKKK LJ KKKKA. . .4                                          "
+echo "      KKA. 'KKKKK LJ KKKKK' .4KK                                          "
+echo "      KKSSA. VKKK LJ KKKV .4SSKK                                          "
+echo "               <><><><>                                                   "
+echo "                'MKKM'                                                    "
+echo "                  ''                                                      "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install All Program & PHP Version 5.4 "
+echo " 2) Install All Program & PHP Version 5.5 "
+echo " 3) Install All Program & PHP Version 5.6 "
+echo " 4) Install All Program & PHP Version 7.1 "
+echo " 5) Install All Program & PHP Version 7.2 "
+echo " 6) Back "
+read -p "Select an option [1-6]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install All Program & PHP Version 5.4? [y/n]: " -e -i n cent7_all_php54
+if [[ "$cent7_all_php54" = 'y' ]]; then
+yum update -y
+yum install epel* -y
+yum install net-tools iptables-services ntp wget git htop telnet tcpdump traceroute -y
+systemctl start ntpd
+systemctl enable ntpd
+#Apache
+yum install epel* -y
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+#PHP
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y
+yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+yum install yum-utils -y
+yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+php -v
+#MySQL
+yum install epel* -y
+yum install mariadb-server mariadb -y
+systemctl start mariadb
+systemctl enable mariadb
+/usr/bin/mysql_secure_installation
+systemctl restart mariadb
+#phpMyAdmin
+yum install epel* -y
+yum install phpmyadmin -y
+PHPMYADMIN="<Directory /usr/share/phpMyAdmin/>
+        Options none
+        AllowOverride Limit
+        Require all granted
+</Directory>"
+DIR_PHPMYADMIN=/etc/httpd/conf.d/
+echo "# phpMyAdmin - Web based MySQL browser written in php
+#
+# Allows only localhost by default
+#
+# But allowing phpMyAdmin to anyone other than localhost should be considered
+# dangerous unless properly secured by SSL
+
+Alias /phpMyAdmin /usr/share/phpMyAdmin
+Alias /phpmyadmin /usr/share/phpMyAdmin
+
+#<Directory /usr/share/phpMyAdmin/>
+#   AddDefaultCharset UTF-8
+#
+#   <IfModule mod_authz_core.c>
+#     # Apache 2.4
+#     <RequireAny>
+#       Require ip 127.0.0.1
+#       Require ip ::1
+#     </RequireAny>
+#   </IfModule>
+#   <IfModule !mod_authz_core.c>
+#     # Apache 2.2
+#     Order Deny,Allow
+#     Deny from All
+#     Allow from 127.0.0.1
+#     Allow from ::1
+#   </IfModule>
+#</Directory>
+
+$PHPMYADMIN
+
+<Directory /usr/share/phpMyAdmin/setup/>
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Deny from All
+     Allow from 127.0.0.1
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+# These directories do not require access over HTTP - taken from the original
+# phpMyAdmin upstream tarball
+#
+<Directory /usr/share/phpMyAdmin/libraries/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/lib/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/frames/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+# This configuration prevents mod_security at phpMyAdmin directories from
+# filtering SQL etc.  This may break your mod_security implementation.
+#
+#<IfModule mod_security.c>
+#    <Directory /usr/share/phpMyAdmin/>
+#        SecRuleInheritance Off
+#    </Directory>
+#</IfModule>" > $DIR_PHPMYADMIN/phpMyAdmin.conf
+systemctl restart httpd
+#Remote
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install xrdp tigervnc-server -y
+systemctl start xrdp
+systemctl enable xrdp
+#Desktop
+yum install epel* -y
+yum groupinstall "GNOME Desktop" "Graphical Administration Tools" -y
+ln -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target
+reboot
+else
+	cent7_menu
+fi
+exit
+;;
+2)
+read -p "Do you want to Install All Program & PHP Version 5.5? [y/n]: " -e -i n cent7_all_php55
+if [[ "$cent7_all_php55" = 'y' ]]; then
+yum update -y
+yum install epel* -y
+yum install net-tools iptables-services ntp wget git htop telnet tcpdump traceroute -y
+systemctl start ntpd
+systemctl enable ntpd
+#Apache
+yum install epel* -y
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+#PHP
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y
+yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+yum install yum-utils -y
+yum-config-manager --enable remi-php55
+yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+php -v
+#MySQL
+yum install epel* -y
+yum install mariadb-server mariadb -y
+systemctl start mariadb
+systemctl enable mariadb
+/usr/bin/mysql_secure_installation
+systemctl restart mariadb
+#phpMyAdmin
+yum install epel* -y
+yum install phpmyadmin -y
+PHPMYADMIN="<Directory /usr/share/phpMyAdmin/>
+        Options none
+        AllowOverride Limit
+        Require all granted
+</Directory>"
+DIR_PHPMYADMIN=/etc/httpd/conf.d/
+echo "# phpMyAdmin - Web based MySQL browser written in php
+#
+# Allows only localhost by default
+#
+# But allowing phpMyAdmin to anyone other than localhost should be considered
+# dangerous unless properly secured by SSL
+
+Alias /phpMyAdmin /usr/share/phpMyAdmin
+Alias /phpmyadmin /usr/share/phpMyAdmin
+
+#<Directory /usr/share/phpMyAdmin/>
+#   AddDefaultCharset UTF-8
+#
+#   <IfModule mod_authz_core.c>
+#     # Apache 2.4
+#     <RequireAny>
+#       Require ip 127.0.0.1
+#       Require ip ::1
+#     </RequireAny>
+#   </IfModule>
+#   <IfModule !mod_authz_core.c>
+#     # Apache 2.2
+#     Order Deny,Allow
+#     Deny from All
+#     Allow from 127.0.0.1
+#     Allow from ::1
+#   </IfModule>
+#</Directory>
+
+$PHPMYADMIN
+
+<Directory /usr/share/phpMyAdmin/setup/>
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Deny from All
+     Allow from 127.0.0.1
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+# These directories do not require access over HTTP - taken from the original
+# phpMyAdmin upstream tarball
+#
+<Directory /usr/share/phpMyAdmin/libraries/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/lib/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/frames/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+# This configuration prevents mod_security at phpMyAdmin directories from
+# filtering SQL etc.  This may break your mod_security implementation.
+#
+#<IfModule mod_security.c>
+#    <Directory /usr/share/phpMyAdmin/>
+#        SecRuleInheritance Off
+#    </Directory>
+#</IfModule>" > $DIR_PHPMYADMIN/phpMyAdmin.conf
+systemctl restart httpd
+#Remote
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install xrdp tigervnc-server -y
+systemctl start xrdp
+systemctl enable xrdp
+#Desktop
+yum install epel* -y
+yum groupinstall "GNOME Desktop" "Graphical Administration Tools" -y
+ln -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target
+reboot
+else
+	cent7_menu
+fi
+exit
+;;
+3)
+read -p "Do you want to Install All Program & PHP Version 5.6? [y/n]: " -e -i n cent7_all_php56
+if [[ "$cent7_all_php56" = 'y' ]]; then
+yum update -y
+yum install epel* -y
+yum install net-tools iptables-services ntp wget git htop telnet tcpdump traceroute -y
+systemctl start ntpd
+systemctl enable ntpd
+#Apache
+yum install epel* -y
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+#PHP
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y
+yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+yum install yum-utils -y
+yum-config-manager --enable remi-php56
+yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+php -v
+#MySQL
+yum install epel* -y
+yum install mariadb-server mariadb -y
+systemctl start mariadb
+systemctl enable mariadb
+/usr/bin/mysql_secure_installation
+systemctl restart mariadb
+#phpMyAdmin
+yum install epel* -y
+yum install phpmyadmin -y
+PHPMYADMIN="<Directory /usr/share/phpMyAdmin/>
+        Options none
+        AllowOverride Limit
+        Require all granted
+</Directory>"
+DIR_PHPMYADMIN=/etc/httpd/conf.d/
+echo "# phpMyAdmin - Web based MySQL browser written in php
+#
+# Allows only localhost by default
+#
+# But allowing phpMyAdmin to anyone other than localhost should be considered
+# dangerous unless properly secured by SSL
+
+Alias /phpMyAdmin /usr/share/phpMyAdmin
+Alias /phpmyadmin /usr/share/phpMyAdmin
+
+#<Directory /usr/share/phpMyAdmin/>
+#   AddDefaultCharset UTF-8
+#
+#   <IfModule mod_authz_core.c>
+#     # Apache 2.4
+#     <RequireAny>
+#       Require ip 127.0.0.1
+#       Require ip ::1
+#     </RequireAny>
+#   </IfModule>
+#   <IfModule !mod_authz_core.c>
+#     # Apache 2.2
+#     Order Deny,Allow
+#     Deny from All
+#     Allow from 127.0.0.1
+#     Allow from ::1
+#   </IfModule>
+#</Directory>
+
+$PHPMYADMIN
+
+<Directory /usr/share/phpMyAdmin/setup/>
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Deny from All
+     Allow from 127.0.0.1
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+# These directories do not require access over HTTP - taken from the original
+# phpMyAdmin upstream tarball
+#
+<Directory /usr/share/phpMyAdmin/libraries/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/lib/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/frames/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+# This configuration prevents mod_security at phpMyAdmin directories from
+# filtering SQL etc.  This may break your mod_security implementation.
+#
+#<IfModule mod_security.c>
+#    <Directory /usr/share/phpMyAdmin/>
+#        SecRuleInheritance Off
+#    </Directory>
+#</IfModule>" > $DIR_PHPMYADMIN/phpMyAdmin.conf
+systemctl restart httpd
+#Remote
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install xrdp tigervnc-server -y
+systemctl start xrdp
+systemctl enable xrdp
+#Desktop
+yum install epel* -y
+yum groupinstall "GNOME Desktop" "Graphical Administration Tools" -y
+ln -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target
+reboot
+else
+	cent7_menu
+fi
+exit
+;;
+4)
+read -p "Do you want to Install All Program & PHP Version 7.1? [y/n]: " -e -i n cent7_all_php71
+if [[ "$cent7_all_php71" = 'y' ]]; then
+yum update -y
+yum install epel* -y
+yum install net-tools iptables-services ntp wget git htop telnet tcpdump traceroute -y
+systemctl start ntpd
+systemctl enable ntpd
+#Apache
+yum install epel* -y
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+#PHP
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y
+yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+yum install yum-utils -y
+yum-config-manager --enable remi-php71
+yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+php -v
+#MySQL
+yum install epel* -y
+yum install mariadb-server mariadb -y
+systemctl start mariadb
+systemctl enable mariadb
+/usr/bin/mysql_secure_installation
+systemctl restart mariadb
+#phpMyAdmin
+yum install epel* -y
+yum install phpmyadmin -y
+PHPMYADMIN="<Directory /usr/share/phpMyAdmin/>
+        Options none
+        AllowOverride Limit
+        Require all granted
+</Directory>"
+DIR_PHPMYADMIN=/etc/httpd/conf.d/
+echo "# phpMyAdmin - Web based MySQL browser written in php
+#
+# Allows only localhost by default
+#
+# But allowing phpMyAdmin to anyone other than localhost should be considered
+# dangerous unless properly secured by SSL
+
+Alias /phpMyAdmin /usr/share/phpMyAdmin
+Alias /phpmyadmin /usr/share/phpMyAdmin
+
+#<Directory /usr/share/phpMyAdmin/>
+#   AddDefaultCharset UTF-8
+#
+#   <IfModule mod_authz_core.c>
+#     # Apache 2.4
+#     <RequireAny>
+#       Require ip 127.0.0.1
+#       Require ip ::1
+#     </RequireAny>
+#   </IfModule>
+#   <IfModule !mod_authz_core.c>
+#     # Apache 2.2
+#     Order Deny,Allow
+#     Deny from All
+#     Allow from 127.0.0.1
+#     Allow from ::1
+#   </IfModule>
+#</Directory>
+
+$PHPMYADMIN
+
+<Directory /usr/share/phpMyAdmin/setup/>
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Deny from All
+     Allow from 127.0.0.1
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+# These directories do not require access over HTTP - taken from the original
+# phpMyAdmin upstream tarball
+#
+<Directory /usr/share/phpMyAdmin/libraries/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/lib/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/frames/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+# This configuration prevents mod_security at phpMyAdmin directories from
+# filtering SQL etc.  This may break your mod_security implementation.
+#
+#<IfModule mod_security.c>
+#    <Directory /usr/share/phpMyAdmin/>
+#        SecRuleInheritance Off
+#    </Directory>
+#</IfModule>" > $DIR_PHPMYADMIN/phpMyAdmin.conf
+systemctl restart httpd
+#Remote
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install xrdp tigervnc-server -y
+systemctl start xrdp
+systemctl enable xrdp
+#Desktop
+yum install epel* -y
+yum groupinstall "GNOME Desktop" "Graphical Administration Tools" -y
+ln -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target
+reboot
+else
+	cent7_menu
+fi
+exit
+;;
+5)
+read -p "Do you want to Install All Program & PHP Version 7.2? [y/n]: " -e -i n cent7_all_php72
+if [[ "$cent7_all_php72" = 'y' ]]; then
+yum update -y
+yum install epel* -y
+yum install net-tools iptables-services ntp wget git htop telnet tcpdump traceroute -y
+systemctl start ntpd
+systemctl enable ntpd
+#Apache
+yum install epel* -y
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+#PHP
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y
+yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+yum install yum-utils -y
+yum-config-manager --enable remi-php72
+yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo -y
+php -v
+#MySQL
+yum install epel* -y
+yum install mariadb-server mariadb -y
+systemctl start mariadb
+systemctl enable mariadb
+/usr/bin/mysql_secure_installation
+systemctl restart mariadb
+#phpMyAdmin
+yum install epel* -y
+yum install phpmyadmin -y
+PHPMYADMIN="<Directory /usr/share/phpMyAdmin/>
+        Options none
+        AllowOverride Limit
+        Require all granted
+</Directory>"
+DIR_PHPMYADMIN=/etc/httpd/conf.d/
+echo "# phpMyAdmin - Web based MySQL browser written in php
+#
+# Allows only localhost by default
+#
+# But allowing phpMyAdmin to anyone other than localhost should be considered
+# dangerous unless properly secured by SSL
+
+Alias /phpMyAdmin /usr/share/phpMyAdmin
+Alias /phpmyadmin /usr/share/phpMyAdmin
+
+#<Directory /usr/share/phpMyAdmin/>
+#   AddDefaultCharset UTF-8
+#
+#   <IfModule mod_authz_core.c>
+#     # Apache 2.4
+#     <RequireAny>
+#       Require ip 127.0.0.1
+#       Require ip ::1
+#     </RequireAny>
+#   </IfModule>
+#   <IfModule !mod_authz_core.c>
+#     # Apache 2.2
+#     Order Deny,Allow
+#     Deny from All
+#     Allow from 127.0.0.1
+#     Allow from ::1
+#   </IfModule>
+#</Directory>
+
+$PHPMYADMIN
+
+<Directory /usr/share/phpMyAdmin/setup/>
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     <RequireAny>
+       Require ip 127.0.0.1
+       Require ip ::1
+     </RequireAny>
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     # Apache 2.2
+     Order Deny,Allow
+     Deny from All
+     Allow from 127.0.0.1
+     Allow from ::1
+   </IfModule>
+</Directory>
+
+# These directories do not require access over HTTP - taken from the original
+# phpMyAdmin upstream tarball
+#
+<Directory /usr/share/phpMyAdmin/libraries/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/lib/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+<Directory /usr/share/phpMyAdmin/setup/frames/>
+    Order Deny,Allow
+    Deny from All
+    Allow from None
+</Directory>
+
+# This configuration prevents mod_security at phpMyAdmin directories from
+# filtering SQL etc.  This may break your mod_security implementation.
+#
+#<IfModule mod_security.c>
+#    <Directory /usr/share/phpMyAdmin/>
+#        SecRuleInheritance Off
+#    </Directory>
+#</IfModule>" > $DIR_PHPMYADMIN/phpMyAdmin.conf
+systemctl restart httpd
+#Remote
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install xrdp tigervnc-server -y
+systemctl start xrdp
+systemctl enable xrdp
+#Desktop
+yum install epel* -y
+yum groupinstall "GNOME Desktop" "Graphical Administration Tools" -y
+ln -sf /lib/systemd/system/runlevel5.target /etc/systemd/system/default.target
+reboot
+else
+	cent7_menu
+fi
+exit
+;;
+6)
+	cent7_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu##
+##################
+ubuntu_menu()
+{
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+	PS3="Select Number [1-4]:"
+	ubuntu_menu=("Ubuntu 14" "Ubuntu 16" "Ubuntu 18" "Back")
+	select ubuntu in "${ubuntu_menu[@]}"; do
+		if [ "$ubuntu" = "Ubuntu 14" ]; then
+	ubuntu14_menu
+		elif [ "$ubuntu" = "Ubuntu 16" ]; then
+	ubuntu16_menu
+		elif [ "$ubuntu" = "Ubuntu 18" ]; then
+	ubuntu18_menu
+		elif [ "$ubuntu" = "Back" ]; then
+	main_menu
+		fi
+done
+}
+################
+
+##Ubuntu14##
+################
+ubuntu14_menu()
+{
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+	PS3="Select Number [1-8]:"
+	ubuntu14_menu=( "Update" "Apache" "PHP" "MySQL" "All Program" "Back")
+	select ubuntu14 in "${ubuntu14_menu[@]}"; do
+		if [ "$ubuntu14" = "Update" ]; then
+	ubuntu14_update_menu
+		elif [ "$ubuntu14" = "Apache" ]; then
+	ubuntu14_apache_menu
+		elif [ "$ubuntu14" = "PHP" ]; then
+	ubuntu14_php_menu
+		elif [ "$ubuntu14" = "MySQL" ]; then
+	ubuntu14_mysql_menu
+		#elif [ "$ubuntu14" = "Desktop" ]; then
+	#ubuntu14_desktop_menu
+		#elif [ "$ubuntu14" = "Remote Desktop" ]; then
+	#ubuntu14_remote_menu
+		elif [ "$ubuntu14" = "All Program" ]; then
+	ubuntu14_all_menu
+		elif [ "$ubuntu14" = "Back" ]; then
+	ubuntu_menu
+		fi
+done
+}
+################
+
+##Ubuntu14_Update##
+##################
+ubuntu14_update_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Update & Install Standard "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Update & Install Standard? [y/n]: " -e -i n ubuntu14_update
+if [[ "$ubuntu14_update" = 'y' ]]; then
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install wget tcpdump ntp git htop telnet traceroute -y
+else
+	ubuntu14_menu
+fi
+exit
+;;
+2)
+	ubuntu14_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu14_Apache##
+##################
+ubuntu14_apache_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Apache "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install Apache? [y/n]: " -e -i n ubuntu14_apache
+if [[ "$ubuntu14_apache" = 'y' ]]; then
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install apache2 -y
+	sudo service apache2 start
+else
+	ubuntu14_menu
+fi
+exit
+;;
+2)
+	ubuntu14_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu14_PHP##
+##################
+ubuntu14_php_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install PHP"
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install PHP? [y/n]: " -e -i n ubuntu14_php
+if [[ "$ubuntu14_php" = 'y' ]]; then
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt php5-mysql php5-cli -y
+else
+	ubuntu14_menu
+fi
+exit
+;;
+2)
+	ubuntu14_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu14_MySQL##
+##################
+ubuntu14_mysql_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install MySQL"
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install MySQL? [y/n]: " -e -i n ubuntu14_mysql
+if [[ "$ubuntu14_mysql" = 'y' ]]; then
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install mysql-server -y
+	sudo service mysql start
+else
+	ubuntu14_menu
+fi
+exit
+;;
+2)
+	ubuntu14_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu14_Desktop##
+##################
+ubuntu14_desktop_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Desktop"
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install Desktop? [y/n]: " -e -i n ubuntu14_desktop
+if [[ "$ubuntu14_desktop" = 'y' ]]; then
+	sudo apt-get install xfce4 xdm -y
+	sudo apt-get update && sudo apt-get install firefox -y
+	reboot
+else
+	ubuntu14_menu
+fi
+exit
+;;
+2)
+	ubuntu14_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu14_Remote_Desktop##
+##################
+ubuntu14_remote_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Remote Desktop"
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install Remote Desktop? [y/n]: " -e -i n ubuntu14_remote
+if [[ "$ubuntu14_remote" = 'y' ]]; then
+	sudo apt-get install xrdp -y
+	echo xfce4-session >~/.xsession
+	sudo service xrdp restart
+else
+	ubuntu14_menu
+fi
+exit
+;;
+2)
+	ubuntu14_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu14_All_Program##
+##################
+ubuntu14_all_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install All Program"
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install All Program? [y/n]: " -e -i n ubuntu14_all
+if [[ "$ubuntu14_all" = 'y' ]]; then
+sudo apt-get update && apt-get upgrade -y
+sudo apt-get install wget tcpdump ntp git htop telnet traceroute -y
+#Apache
+sudo apt-get install apache2 -y
+sudo service apache2 start
+#PHP
+sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt php5-mysql php5-cli -y
+#MySQL
+sudo apt-get install mysql-server -y
+sudo service mysql start
+#Remote
+#sudo apt-get install xrdp -y
+#echo xfce4-session >~/.xsession
+#sudo service xrdp restart
+#Desktop
+#sudo apt-get install xfce4 xdm -y
+#sudo apt-get update && sudo apt-get install firefox -y
+#reboot
+else
+	ubuntu14_menu
+fi
+exit
+;;
+2)
+	ubuntu14_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu16##
+################
+ubuntu16_menu()
+{
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+	PS3="Select Number [1-6]:"
+	ubuntu16_menu=( "Update" "Apache" "PHP" "MySQL" "All Program" "Back")
+	select ubuntu16 in "${ubuntu16_menu[@]}"; do
+		if [ "$ubuntu16" = "Update" ]; then
+	ubuntu16_update_menu
+		elif [ "$ubuntu16" = "Apache" ]; then
+	ubuntu16_apache_menu
+		elif [ "$ubuntu16" = "PHP" ]; then
+	ubuntu16_php_menu
+		elif [ "$ubuntu16" = "MySQL" ]; then
+	ubuntu16_mysql_menu
+		#elif [ "$ubuntu16" = "Desktop" ]; then
+	#ubuntu16_desktop_menu
+		#elif [ "$ubuntu16" = "Remote Desktop" ]; then
+	#ubuntu16_remote_menu
+		elif [ "$ubuntu16" = "All Program" ]; then
+	ubuntu16_all_menu
+		elif [ "$ubuntu16" = "Back" ]; then
+	ubuntu_menu
+		fi
+done
+}
+################
+
+##Ubuntu16_Update##
+##################
+ubuntu16_update_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Update & Install Standard "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Update & Install Standard? [y/n]: " -e -i n ubuntu16_update
+if [[ "$ubuntu16_update" = 'y' ]]; then
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install wget tcpdump ntp git htop telnet traceroute -y
+else
+	ubuntu16_menu
+fi
+exit
+;;
+2)
+	ubuntu16_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu16_Apache##
+##################
+ubuntu16_apache_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Apache "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install Apache? [y/n]: " -e -i n ubuntu16_apache
+if [[ "$ubuntu16_apache" = 'y' ]]; then
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install apache2 -y
+	sudo systemctl restart apache2
+	sudo systemctl enable apache2
+else
+	ubuntu16_menu
+fi
+exit
+;;
+2)
+	ubuntu16_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu16_PHP##
+##################
+ubuntu16_php_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install PHP Version 5.6"
+echo " 2) Install PHP Version 7.1"
+echo " 3) Install PHP Version 7.2 "
+echo " 4) Back "
+read -p "Select an option [1-4]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install PHP Version 5.6? [y/n]: " -e -i n ubuntu16_php56
+if [[ "ubuntu16_php56" = 'y' ]]; then
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install python-software-properties -y
+	sudo add-apt-repository ppa:ondrej/php
+	sudo apt-get update -y
+	sudo apt-get install php5.6 -y
+	php -v
+else
+	ubuntu16_menu
+fi
+exit
+;;
+2)
+read -p "Do you want to Install PHP Version 7.1? [y/n]: " -e -i n ubuntu16_php71
+if [[ "ubuntu16_php71" = 'y' ]]; then
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install python-software-properties -y
+	sudo add-apt-repository ppa:ondrej/php
+	sudo apt-get update -y
+	sudo apt-get install php7.1 -y
+	php -v
+else
+	ubuntu16_menu
+fi
+exit
+;;
+3)
+read -p "Do you want to Install PHP Version 7.2? [y/n]: " -e -i n ubuntu16_php72
+if [[ "ubuntu16_php72" = 'y' ]]; then
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install python-software-properties -y
+	sudo add-apt-repository ppa:ondrej/php
+	sudo apt-get update -y
+	sudo apt-get install -y php7.2
+	php -v
+else
+	ubuntu16_menu
+fi
+exit
+;;
+4)
+	ubuntu16_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu16_MySQL##
+##################
+ubuntu16_mysql_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install MySQL"
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install MySQL? [y/n]: " -e -i n ubuntu16_mysql
+if [[ "$ubuntu16_mysql" = 'y' ]]; then
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install mysql-server -y
+	sudo systemctl start mysql
+	sudo systemctl enable mysql
+else
+	ubuntu16_menu
+fi
+exit
+;;
+2)
+	ubuntu16_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu16_Desktop##
+##################
+ubuntu16_desktop_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Desktop"
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install Desktop? [y/n]: " -e -i n ubuntu16_desktop
+if [[ "$ubuntu16_desktop" = 'y' ]]; then
+	sudo apt-get install ubuntu-gnome-desktop -y
+	sudo apt-get update && sudo apt-get install firefox -y
+	reboot
+else
+	ubuntu16_menu
+fi
+exit
+;;
+2)
+	ubuntu16_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu16_Remote_Desktop##
+##################
+ubuntu16_remote_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Remote Desktop"
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install Remote Desktop? [y/n]: " -e -i n ubuntu16_remote
+if [[ "$ubuntu16_remote" = 'y' ]]; then
+	sudo apt-get install xrdp -y
+	sudo service xrdp restart
+else
+	ubuntu16_menu
+fi
+exit
+;;
+2)
+	ubuntu16_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu16_All_Program##
+##################
+ubuntu16_all_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install All Program & PHP Version 5.6"
+echo " 2) Install All Program & PHP Version 7.1"
+echo " 3) Install All Program & PHP Version 7.2"
+echo " 4) Back "
+read -p "Select an option [1-4]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install All Program & PHP Version 5.6? [y/n]: " -e -i n ubuntu16_all_php56
+if [[ "$ubuntu16_all_php56" = 'y' ]]; then
+sudo apt-get update && apt-get upgrade -y
+sudo apt-get install wget tcpdump ntp git htop telnet traceroute -y
+#Apache
+sudo apt-get install apache2 -y
+sudo systemctl restart apache2
+sudo systemctl enable apache2
+#PHP
+sudo apt-get install python-software-properties -y
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update -y
+sudo apt-get install php5.6 -y
+php -v
+#MySQL
+sudo apt-get install mysql-server -y
+sudo systemctl start mysql
+sudo systemctl enable mysql
+#Remote
+#sudo apt-get install xrdp -y
+#echo xfce4-session >~/.xsession
+#sudo service xrdp restart
+#Desktop
+#sudo apt-get install xfce4 xdm -y
+#sudo apt-get update && sudo apt-get install firefox -y
+#reboot
+else
+	ubuntu16_all_menu
+fi
+exit
+;;
+2)
+read -p "Do you want to Install All Program & PHP Version 7.1? [y/n]: " -e -i n ubuntu16_all_php71
+if [[ "$ubuntu16_all_php71" = 'y' ]]; then
+sudo apt-get update && apt-get upgrade -y
+sudo apt-get install wget tcpdump ntp git htop telnet traceroute -y
+#Apache
+sudo apt-get install apache2 -y
+sudo systemctl restart apache2
+sudo systemctl enable apache2
+#PHP
+sudo apt-get install python-software-properties -y
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update -y
+sudo apt-get install php7.1 -y
+php -v
+#MySQL
+sudo apt-get install mysql-server -y
+sudo systemctl start mysql
+sudo systemctl enable mysql
+#Remote
+#sudo apt-get install xrdp -y
+#echo xfce4-session >~/.xsession
+#sudo service xrdp restart
+#Desktop
+#sudo apt-get install xfce4 xdm -y
+#sudo apt-get update && sudo apt-get install firefox -y
+#reboot
+else
+	ubuntu16_all_menu
+fi
+exit
+;;
+3)
+read -p "Do you want to Install All Program & PHP Version 7.2? [y/n]: " -e -i n ubuntu16_all_php72
+if [[ "$ubuntu16_all_php72" = 'y' ]]; then
+sudo apt-get update && apt-get upgrade -y
+sudo apt-get install wget tcpdump ntp git htop telnet traceroute -y
+#Apache
+sudo apt-get install apache2 -y
+sudo systemctl restart apache2
+sudo systemctl enable apache2
+#PHP
+sudo apt-get install python-software-properties -y
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update -y
+sudo apt-get install php7.2 -y
+php -v
+#MySQL
+sudo apt-get install mysql-server -y
+sudo systemctl start mysql
+sudo systemctl enable mysql
+#Remote
+#sudo apt-get install xrdp -y
+#echo xfce4-session >~/.xsession
+#sudo service xrdp restart
+#Desktop
+#sudo apt-get install xfce4 xdm -y
+#sudo apt-get update && sudo apt-get install firefox -y
+#reboot
+exit
+else
+	ubuntu16_all_menu
+fi
+;;
+4)
+	ubuntu16_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu18##
+################
+ubuntu18_menu()
+{
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+	PS3="Select Number [1-6]:"
+	ubuntu18_menu=( "Update" "Apache" "PHP" "MySQL" "All Program" "Back")
+	select ubuntu18 in "${ubuntu18_menu[@]}"; do
+		if [ "$ubuntu18" = "Update" ]; then
+	ubuntu18_update_menu
+		elif [ "$ubuntu18" = "Apache" ]; then
+	ubuntu18_apache_menu
+		elif [ "$ubuntu18" = "PHP" ]; then
+	ubuntu18_php_menu
+		elif [ "$ubuntu18" = "MySQL" ]; then
+	ubuntu18_mysql_menu
+		#elif [ "$ubuntu18" = "Desktop" ]; then
+	#ubuntu18_desktop_menu
+		#elif [ "$ubuntu18" = "Remote Desktop" ]; then
+	#ubuntu18_remote_menu
+		elif [ "$ubuntu18" = "All Program" ]; then
+	ubuntu18_all_menu
+		elif [ "$ubuntu18" = "Back" ]; then
+	ubuntu_menu
+		fi
+done
+}
+################
+
+##Ubuntu18_Update##
+##################
+ubuntu18_update_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Update & Install Standard "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Update & Install Standard? [y/n]: " -e -i n ubuntu18_update
+if [[ "$ubuntu18_update" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install wget tcpdump ntp git htop telnet traceroute -y
+else
+	ubuntu18_menu
+fi
+exit
+;;
+2)
+	ubuntu18_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu18_Apache##
+##################
+ubuntu18_apache_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Apache "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install Apache? [y/n]: " -e -i n ubuntu18_apache
+if [[ "$ubuntu18_apache" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install apache2 -y
+	systemctl restart apache2
+	systemctl enable apache2
+else
+	ubuntu18_menu
+fi
+exit
+;;
+2)
+	ubuntu18_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu18_PHP##
+##################
+ubuntu18_php_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install PHP Version 5.6"
+echo " 2) Install PHP Version 7.1"
+echo " 3) Install PHP Version 7.2 "
+echo " 4) Back "
+read -p "Select an option [1-4]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install PHP Version 5.6? [y/n]: " -e -i n ubuntu18_php56
+if [[ "ubuntu18_php56" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install python-software-properties -y
+	add-apt-repository ppa:ondrej/php
+	apt-get update -y
+	apt-get install php5.6 -y
+	php -v
+else
+	ubuntu16_menu
+fi
+exit
+;;
+2)
+read -p "Do you want to Install PHP Version 7.1? [y/n]: " -e -i n ubuntu18_php71
+if [[ "ubuntu18_php71" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install python-software-properties -y
+	add-apt-repository ppa:ondrej/php
+	apt-get update -y
+	apt-get install php7.1 -y
+	php -v
+else
+	ubuntu16_menu
+fi
+exit
+;;
+3)
+read -p "Do you want to Install PHP Version 7.2? [y/n]: " -e -i n ubuntu18_php72
+if [[ "ubuntu18_php72" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install python-software-properties -y
+	add-apt-repository ppa:ondrej/php
+	apt-get update -y
+	apt-get install -y php7.2
+	php -v
+else
+	ubuntu16_menu
+fi
+exit
+;;
+4)
+	ubuntu16_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu18_MySQL##
+##################
+ubuntu18_mysql_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install MySQL"
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install MySQL? [y/n]: " -e -i n ubuntu18_mysql
+if [[ "$ubuntu18_mysql" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install mysql-server -y
+	systemctl start mysql
+	systemctl enable mysql
+else
+	ubuntu16_menu
+fi
+exit
+;;
+2)
+	ubuntu16_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu18_Desktop##
+##################
+ubuntu18_desktop_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Desktop"
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install Desktop? [y/n]: " -e -i n ubuntu18_desktop
+if [[ "$ubuntu18_desktop" = 'y' ]]; then
+	apt-get install ubuntu-gnome-desktop -y
+	apt-get update && sudo apt-get install firefox -y
+	reboot
+else
+	ubuntu18_menu
+fi
+exit
+;;
+2)
+	ubuntu18_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu18_Remote_Desktop##
+##################
+ubuntu18_remote_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Remote Desktop"
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install Remote Desktop? [y/n]: " -e -i n ubuntu18_remote
+if [[ "$ubuntu18_remote" = 'y' ]]; then
+	apt-get install xrdp -y
+	service xrdp restart
+else
+	ubuntu18_menu
+fi
+exit
+;;
+2)
+	ubuntu18_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Ubuntu18_All_Program##
+##################
+ubuntu18_all_menu()
+{
+while :
+do
+        clear && echo ""
+echo "               .-.                                                           "
+echo "         .-'''(|||)                                                          "
+echo "      ,'\ \    '-'.                 88                         88            "
+echo "     /   \ '''-.   '                88                         88            "
+echo "   .-.  ,       '___:      88   88  88,888,  88   88  ,88888, 88888  88   88 "
+echo "  (:::) :        ___       88   88  88   88  88   88  88   88  88    88   88 "
+echo "   '-'  '       ,   :      88   88  88   88  88   88  88   88  88    88   88 "
+echo "     \   / ,..-'   ,       88   88  88   88  88   88  88   88  88    88   88 "
+echo "      './ /    .-.'        '88888'  '88888'  '88888'  88   88  '8888 '88888' "
+echo "         '-..-(   )                                                          "
+echo "               '-'                                                           "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install All Program & PHP Version 5.6"
+echo " 2) Install All Program & PHP Version 7.1"
+echo " 3) Install All Program & PHP Version 7.2"
+echo " 4) Back "
+read -p "Select an option [1-4]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install All Program & PHP Version 5.6? [y/n]: " -e -i n ubuntu18_all_php56
+if [[ "$ubuntu18_all_php56" = 'y' ]]; then
+apt-get update && apt-get upgrade -y
+apt-get install wget tcpdump ntp git htop telnet traceroute -y
+#Apache
+apt-get install apache2 -y
+systemctl restart apache2
+systemctl enable apache2
+#PHP
+apt-get install python-software-properties -y
+add-apt-repository ppa:ondrej/php
+apt-get update -y
+apt-get install php5.6 -y
+php -v
+#MySQL
+apt-get install mysql-server -y
+systemctl start mysql
+systemctl enable mysql
+#Remote
+#apt-get install xrdp -y
+#echo xfce4-session >~/.xsession
+#service xrdp restart
+#Desktop
+#apt-get install xfce4 xdm -y
+#apt-get update && sudo apt-get install firefox -y
+#reboot
+else
+	ubuntu18_all_menu
+fi
+exit
+;;
+2)
+read -p "Do you want to Install All Program & PHP Version 7.1? [y/n]: " -e -i n ubuntu18_all_php71
+if [[ "$ubuntu18_all_php71" = 'y' ]]; then
+apt-get update && apt-get upgrade -y
+apt-get install wget tcpdump ntp git htop telnet traceroute -y
+#Apache
+apt-get install apache2 -y
+systemctl restart apache2
+systemctl enable apache2
+#PHP
+apt-get install python-software-properties -y
+add-apt-repository ppa:ondrej/php
+apt-get update -y
+apt-get install php7.1 -y
+php -v
+#MySQL
+apt-get install mysql-server -y
+systemctl start mysql
+systemctl enable mysql
+#Remote
+#apt-get install xrdp -y
+#echo xfce4-session >~/.xsession
+#service xrdp restart
+#Desktop
+#apt-get install xfce4 xdm -y
+#apt-get update && sudo apt-get install firefox -y
+#reboot
+else
+	ubuntu18_all_menu
+fi
+exit
+;;
+3)
+read -p "Do you want to Install All Program & PHP Version 7.2? [y/n]: " -e -i n ubuntu18_all_php72
+if [[ "$ubuntu18_all_php72" = 'y' ]]; then
+apt-get update && apt-get upgrade -y
+apt-get install wget tcpdump ntp git htop telnet traceroute -y
+#Apache
+apt-get install apache2 -y
+systemctl restart apache2
+systemctl enable apache2
+#PHP
+apt-get install python-software-properties -y
+add-apt-repository ppa:ondrej/php
+apt-get update -y
+apt-get install php7.2 -y
+php -v
+#MySQL
+apt-get install mysql-server -y
+systemctl start mysql
+systemctl enable mysql
+#Remote
+#apt-get install xrdp -y
+#echo xfce4-session >~/.xsession
+#service xrdp restart
+#Desktop
+#apt-get install xfce4 xdm -y
+#apt-get update && sudo apt-get install firefox -y
+#reboot
+else
+	ubuntu18_all_menu
+fi
+exit
+;;
+4)
+	ubuntu18_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian##
+################
+debian_nmenu()
+{
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+	PS3="Select Number [1-4]:"
+	debian_nmenu=("Debian 7" "Debian 8" "Debian 9" "Back")
+	select debian in "${debian_nmenu[@]}"; do
+		if [ "$debian" = "Debian 7" ]; then
+	debian7_menu
+		elif [ "$debian" = "Debian 8" ]; then
+	debian8_menu
+		elif [ "$debian" = "Debian 9" ]; then
+	debian9_menu
+		elif [ "$debian" = "Back" ]; then
+	main_menu
+		fi
+done
+}
+################
+
+##Debian7##
+################
+debian7_menu()
+{
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+	PS3="Select Number [1-6]:"
+	debian7_menu=("Update" "Apache" "PHP" "MySQL" "All Program" "Back")
+	select debian7 in "${debian7_menu[@]}"; do
+		if [ "$debian7" = "Update" ]; then
+	debian7_update_menu
+		elif [ "$debian7" = "Apache" ]; then
+	debian7_apache_menu
+		elif [ "$debian7" = "PHP" ]; then
+	debian7_php_menu
+		elif [ "$debian7" = "MySQL" ]; then
+	debian7_mysql_menu
+		elif [ "$debian7" = "All Program" ]; then
+	debian7_all_menu
+		elif [ "$debian7" = "Back" ]; then
+	debian_nmenu
+		fi
+done
+}
+################
+
+##Debian7_Update##
+##################
+debian7_update_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Update & Install Standard "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Update & Install Standard? [y/n]: " -e -i n debian7_update
+if [[ "$debian7_update" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install wget tcpdump ntp git htop telnet traceroute -y
+else
+	debian7_menu
+fi
+exit
+;;
+2)
+	debian7_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian7_Apache##
+##################
+debian7_apache_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Apache "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Update & Install Standard? [y/n]: " -e -i n debian7_apache
+if [[ "$debian7_apache" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install apache2 -y
+	service apache2 start
+else
+	debian7_menu
+fi
+exit
+;;
+2)
+	debian7_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian7_PHP##
+##################
+debian7_php_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install PHP Version 5.4 "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install PHP Version 5.3? [y/n]: " -e -i n debian7_php54
+if [[ "$debian7_php54" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install php5 php-pear php5-mysql -y
+	php -v
+else
+	debian7_menu
+fi
+exit
+;;
+2)
+	debian7_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian7_MySQL##
+##################
+debian7_mysql_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install MySQL "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install MySQL? [y/n]: " -e -i n debian7_mysql
+if [[ "$debian7_mysql" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install mysql-server -y
+	service mysql start
+else
+	debian7_menu
+fi
+exit
+;;
+2)
+	debian7_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian7_All_Program##
+##################
+debian7_all_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install All Program & PHP Version 5.4 "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install All Program & PHP Version 5.4? [y/n]: " -e -i n debian7_all_php54
+if [[ "$debian7_all_php54" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install wget tcpdump ntp git htop telnet traceroute -y
+	#Apache
+	 apt-get install apache2 -y
+	 service apache2 start
+	#PHP
+	apt-get install php5 php-pear php5-mysql -y
+	php -v
+	#MySQL
+	apt-get install mysql-server -y
+	service mysql start
+	service apache2 restart
+else
+	debian7_menu
+fi
+exit
+;;
+2)
+	debian7_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian8##
+################
+debian8_menu()
+{
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+	PS3="Select Number [1-6]:"
+	debian8_menu=("Update" "Apache" "PHP" "MySQL" "All Program" "Back")
+	select debian8 in "${debian8_menu[@]}"; do
+		if [ "$debian8" = "Update" ]; then
+	debian8_update_menu
+		elif [ "$debian8" = "Apache" ]; then
+	debian8_apache_menu
+		elif [ "$debian8" = "PHP" ]; then
+	debian8_php_menu
+		elif [ "$debian8" = "MySQL" ]; then
+	debian8_mysql_menu
+		elif [ "$debian8" = "All Program" ]; then
+	debian8_all_menu
+		elif [ "$debian8" = "Back" ]; then
+	debian_nmenu
+		fi
+done
+}
+################
+
+##Debian8_Update##
+##################
+debian8_update_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Update & Install Standard "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Update & Install Standard? [y/n]: " -e -i n debian8_update
+if [[ "$debian8_update" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install wget tcpdump ntp git htop telnet traceroute -y
+else
+	debian8_menu
+fi
+exit
+;;
+2)
+	debian8_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian8_Apache##
+##################
+debian8_apache_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Apache "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install Apache? [y/n]: " -e -i n debian8_apache
+if [[ "$debian8_apache" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install apache2 -y
+	systemctl restart apache2
+	systemctl enable apache2
+else
+	debian8_menu
+fi
+exit
+;;
+2)
+	debian8_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian8_PHP##
+##################
+debian8_php_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install PHP Version 5.6 "
+echo " 2) Install PHP Version 7.1 "
+echo " 3) Install PHP Version 7.2 "
+echo " 4) Back "
+read -p "Select an option [1-4]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install PHP Version 5.6? [y/n]: " -e -i n debian8_php56
+if [[ "$debian8_php56" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install apt-transport-https lsb-release ca-certificates -y
+	wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+	echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
+	apt-get update -y
+	apt-get install php5.6 -y
+	apt-get install php5.6-cli php5.6-common php5.6-curlphp5.6-mbstring php5.6-mysql php5.6-xml -y
+	php -v
+else
+	debian8_php_menu
+fi
+exit
+;;
+2)
+read -p "Do you want to Install PHP Version 7.1? [y/n]: " -e -i n debian8_php71
+if [[ "$debian8_php71" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install apt-transport-https lsb-release ca-certificates -y
+	wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+	echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
+	apt-get update -y
+	apt-get install php7.1 -y
+	apt-get install php7.1-cli php7.1-common php7.1-curlphp7.1-mbstring php7.1-mysql php7.1-xml -y
+	php -v
+else
+	debian8_php_menu
+fi
+exit
+;;
+3)
+read -p "Do you want to Install PHP Version 7.2? [y/n]: " -e -i n debian8_php72
+if [[ "$debian8_php72" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install apt-transport-https lsb-release ca-certificates -y
+	wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+	echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
+	apt-get update -y
+	apt-get install php7.2 -y
+	apt-get install php7.2-cli php7.2-common php7.2-curl php7.2-mbstring php7.2-mysql php7.2-xml -y
+	php -v
+else
+	debian8_php_menu
+fi
+exit
+;;
+4)
+	debian8_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian8_MySQL##
+##################
+debian8_mysql_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install MySQL "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install MySQL? [y/n]: " -e -i n debian8_mysql
+if [[ "$debian8_mysql" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	apt-get install mysql-server -y
+	systemctl restart mysql
+	systemctl enable mysql
+else
+	debian8_menu
+fi
+exit
+;;
+2)
+	debian8_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian8_All_Program##
+##################
+debian8_all_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install All Program & PHP Version 5.6 "
+echo " 2) Install All Program & PHP Version 7.1 "
+echo " 3) Install All Program & PHP Version 7.2 "
+echo " 4) Back "
+read -p "Select an option [1-4]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install All Program & PHP Version 5.6? [y/n]: " -e -i n debian8_all_php56
+if [[ "$debian8_all_php56" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	#Apache
+	apt-get install apache2 -y
+	systemctl restart apache2
+	systemctl enable apache2
+	#PHP
+	apt-get install apt-transport-https lsb-release ca-certificates -y
+	wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+	echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
+	apt-get update -y
+	apt-get install php5.6 -y
+	apt-get install php5.6-cli php5.6-common php5.6-curlphp5.6-mbstring php5.6-mysql php5.6-xml -y
+	php -v
+	#MySQL
+	apt-get install mysql-server -y
+	systemctl restart mysql
+	systemctl enable mysql
+else
+	debian8_all_menu
+fi
+exit
+;;
+2)
+read -p "Do you want to Install All Program & PHP Version 7.1? [y/n]: " -e -i n debian8_all_php71
+if [[ "$debian8_all_php71" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	#Apache
+	apt-get install apache2 -y
+	systemctl restart apache2
+	systemctl enable apache2
+	#PHP
+	apt-get install apt-transport-https lsb-release ca-certificates -y
+	wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+	echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
+	apt-get update -y
+	apt-get install php7.1 -y
+	apt-get install php7.1-cli php7.1-common php7.1-curlphp7.1-mbstring php7.1-mysql php7.1-xml -y
+	php -v
+	#MySQL
+	apt-get install mysql-server -y
+	systemctl restart mysql
+	systemctl enable mysql
+else
+	debian8_all_menu
+fi
+exit
+;;
+3)
+read -p "DDo you want to Install All Program & PHP Version 7.2? [y/n]: " -e -i n debian8_all_php72
+if [[ "$debian8_all_php72" = 'y' ]]; then
+	apt-get update && apt-get upgrade -y
+	#Apache
+	apt-get install apache2 -y
+	systemctl restart apache2
+	systemctl enable apache2
+	#PHP
+	apt-get install apt-transport-https lsb-release ca-certificates -y
+	wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+	echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list
+	apt-get update -y
+	apt-get install php7.2 -y
+	apt-get install php7.2-cli php7.2-common php7.2-curl php7.2-mbstring php7.2-mysql php7.2-xml -y
+	php -v
+	#MySQL
+	apt-get install mysql-server -y
+	systemctl restart mysql
+	systemctl enable mysql
+else
+	debian8_all_menu
+fi
+exit
+;;
+4)
+	debian8_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian9##
+################
+debian9_menu()
+{
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+	PS3="Select Number [1-6]:"
+	debian9_menu=("Update" "Apache" "PHP" "MySQL" "All Program" "Back")
+	select debian9 in "${debian9_menu[@]}"; do
+		if [ "$debian9" = "Update" ]; then
+	debian9_update_menu
+		elif [ "$debian9" = "Apache" ]; then
+	debian9_apache_menu
+		elif [ "$debian9" = "PHP" ]; then
+	debian9_php_menu
+		elif [ "$debian9" = "MySQL" ]; then
+	debian9_mysql_menu
+		elif [ "$debian9" = "All Program" ]; then
+	debian9_all_menu
+		elif [ "$debian9" = "Back" ]; then
+	debian_nmenu
+		fi
+done
+}
+################
+
+##Debian9_Update##
+##################
+debian9_update_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Update & Install Standard "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Update & Install Standard? [y/n]: " -e -i n debian9_update
+if [[ "$debian9_update" = 'y' ]]; then
+	apt-get install sudo -y
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install net-tools wget tcpdump ntp git htop telnet traceroute -y
+else
+	debian9_menu
+fi
+exit
+;;
+2)
+	debian9_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian9_Apache##
+##################
+debian9_apache_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install Apache "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Update & Install Standard? [y/n]: " -e -i n debian9_apache
+if [[ "$debian9_apache" = 'y' ]]; then
+	apt-get install sudo -y
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install apache2 -y
+	sudo systemctl restart apache2
+	sudo systemctl enable apache2
+else
+	debian9_menu
+fi
+exit
+;;
+2)
+	debian9_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian9_PHP##
+##################
+debian9_php_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install PHP Version 5.6 "
+echo " 2) Install PHP Version 7.1 "
+echo " 3) Install PHP Version 7.2 "
+echo " 4) Back "
+read -p "Select an option [1-4]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install PHP Version 5.6? [y/n]: " -e -i n debian9_php56
+if [[ "$debian9_php56" = 'y' ]]; then
+	apt-get install sudo -y
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install ca-certificates apt-transport-https  -y
+	sudo wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add -
+	sudo echo "deb https://packages.sury.org/php/ stretch main" | sudo tee /etc/apt/sources.list.d/php.list
+	sudo apt-get update -y
+	sudo apt-get install php5.6 -y
+	sudo apt-get install php5.6-cli php5.6-common php5.6-curl php5.6-mbstring php5.6-mysql php5.6-xml -y
+	php -v
+else
+	debian9_php_menu
+fi
+exit
+;;
+2)
+read -p "Do you want to Install PHP Version 7.1? [y/n]: " -e -i n debian9_php71
+if [[ "$debian9_php71" = 'y' ]]; then
+	apt-get install sudo -y
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install ca-certificates apt-transport-https  -y
+	sudo wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add -
+	sudo echo "deb https://packages.sury.org/php/ stretch main" | sudo tee /etc/apt/sources.list.d/php.list
+	sudo apt-get update -y
+	sudo apt-get install php7.1 -y
+	sudo apt-get install php7.1-cli php7.1-common php7.1-curlphp7.1-mbstring php7.1-mysql php7.1-xml -y
+	php -v
+else
+	debian9_php_menu
+fi
+exit
+;;
+3)
+read -p "Do you want to Install PHP Version 7.2? [y/n]: " -e -i n debian9_php72
+if [[ "$debian9_php72" = 'y' ]]; then
+	apt-get install sudo -y
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install ca-certificates apt-transport-https  -y
+	sudo wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add -
+	sudo echo "deb https://packages.sury.org/php/ stretch main" | sudo tee /etc/apt/sources.list.d/php.list
+	sudo apt-get update -y
+	sudo apt-get install php7.2 -y
+	sudo apt-get install php7.2-cli php7.2-common php7.2-curl php7.2-mbstring php7.2-mysql php7.2-xml -y
+	php -v
+else
+	debian9_php_menu
+fi
+exit
+;;
+4)
+	debian9_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian9_MySQL##
+##################
+debian9_mysql_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install MySQL "
+echo " 2) Back "
+read -p "Select an option [1-2]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install MySQL? [y/n]: " -e -i n debian9_mysql
+if [[ "$debian9_mysql" = 'y' ]]; then
+	apt-get install sudo -y
+	sudo apt-get update && apt-get upgrade -y
+	sudo apt-get install mysql-server -y
+	sudo systemctl restart mysql
+	sudo systemctl enable mysql
+else
+	debian9_menu
+fi
+exit
+;;
+2)
+	debian9_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##Debian9_All_Program##
+##################
+debian9_all_menu()
+{
+while :
+do
+        clear && echo ""
+echo "          _sudZUZ#Z#XZo=_         DDDD   EEEEEE BBBB   IIIIII  AAAA   NN   NN "
+echo "       _jmZZ2!!~---~!!X##wa       DD DD  EE     BB BB    II   AA  AA  NNN  NN "
+echo "    .<wdP~~            -!YZL,     DD  DD EEEEE  BBBBB    II   AAAAAA  NNNN NN "
+echo "   .mX2'       _%aaa__     XZ[.   DD DD  EE     BB  BB   II   AA  AA  NN NNNN "
+echo "   oZ[      _jdXY!~?S#wa   ]Xb;   DDDD   EEEEEE BBBBB  IIIIII AA  AA  NN   NN "
+echo "  _#e'     .]X2(     ~Xw|  )XXc                                               "
+echo " .2Z'      ]X[.       xY|  ]oZ(                                               "
+echo " .2#;      )3k;     _s!~   jXf'                                               "
+echo "  1Z>      -]Xb/    ~    __#2(                                                "
+echo "  -Zo;       +!4ZwaaaauZZXY'                                                  "
+echo "   *#[,        ~-?!!!!!!-~                                                    "
+echo "    XUb;.                                                                     "
+echo "     )YXL,,                                                                   "
+echo "      +3#bc,                                                                  "
+echo "       -)SSL,,                                                                "
+echo "           ~~~~~                                                              "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+
+echo " 1) Install All Program & PHP Version 5.6 "
+echo " 2) Install All Program & PHP Version 7.1 "
+echo " 3) Install All Program & PHP Version 7.2 "
+echo " 4) Back "
+read -p "Select an option [1-4]: " option
+echo ""
+case $option in
+1)
+read -p "Do you want to Install All Program & Version 5.6? [y/n]: " -e -i n debian9_all_php56
+if [[ "$debian9_all_php56" = 'y' ]]; then
+	apt-get install sudo -y
+	sudo apt-get update && apt-get upgrade -y
+	#Apache
+	sudo apt-get install apache2 -y
+	sudo systemctl restart apache2
+	sudo systemctl enable apache2
+	#PHP
+	sudo apt-get install ca-certificates apt-transport-https  -y
+	sudo wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add -
+	sudo echo "deb https://packages.sury.org/php/ stretch main" | sudo tee /etc/apt/sources.list.d/php.list
+	sudo apt-get update -y
+	sudo apt-get install php5.6 -y
+	sudo apt-get install php5.6-cli php5.6-common php5.6-curl php5.6-mbstring php5.6-mysql php5.6-xml -y
+	php -v
+	#MySQL
+	sudo apt-get install mysql-server -y
+	sudo systemctl restart mysql
+	sudo systemctl enable mysql
+else
+	debian9_all_menu
+fi
+exit
+;;
+2)
+read -p "Do you want to Install All Program & Version 7.1? [y/n]: " -e -i n debian9_all_php71
+if [[ "$debian9_all_php71" = 'y' ]]; then
+	apt-get install sudo -y
+	sudo apt-get update && apt-get upgrade -y
+	#Apache
+	sudo apt-get install apache2 -y
+	sudo systemctl restart apache2
+	sudo systemctl enable apache2
+	#PHP
+	sudo apt-get install ca-certificates apt-transport-https  -y
+	sudo wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add -
+	sudo echo "deb https://packages.sury.org/php/ stretch main" | sudo tee /etc/apt/sources.list.d/php.list
+	sudo apt-get update -y
+	sudo apt-get install php7.1 -y
+	sudo apt-get install php7.1-cli php7.1-common php7.1-curlphp7.1-mbstring php7.1-mysql php7.1-xml -y
+	php -v
+	#MySQL
+	sudo apt-get install mysql-server -y
+	sudo systemctl restart mysql
+	sudo systemctl enable mysql
+else
+	debian9_all_menu
+fi
+exit
+;;
+3)
+read -p "DDo you want to Install All Program & Version 7.2? [y/n]: " -e -i n debian9_all_php72
+if [[ "$debian9_all_php72" = 'y' ]]; then
+	apt-get install sudo -y
+	sudo apt-get update && apt-get upgrade -y
+	#Apache
+	sudo apt-get install apache2 -y
+	sudo systemctl restart apache2
+	sudo systemctl enable apache2
+	#PHP
+	sudo apt-get install ca-certificates apt-transport-https  -y
+	sudo wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add -
+	sudo echo "deb https://packages.sury.org/php/ stretch main" | sudo tee /etc/apt/sources.list.d/php.list
+	sudo apt-get update -y
+	sudo apt-get install php7.2 -y
+	sudo apt-get install php7.2-cli php7.2-common php7.2-curl php7.2-mbstring php7.2-mysql php7.2-xml -y
+	php -v
+	#MySQL
+	sudo apt-get install mysql-server -y
+	sudo systemctl restart mysql
+	sudo systemctl enable mysql
+else
+	debian9_all_menu
+fi
+exit
+;;
+4)
+	debian9_menu
+exit
+;;
+
+esac
+done
+}
+##################
+
+##WELCOME##
+#########################
+##START WELCOME MESSAGE##
+        clear && echo ""
+echo " _________  _________  _________  ___            ___  ________    _________  _________  _________  "
+echo "|  _____  ||___   ___|/  _____  \/   \          /   \|  _____ \  /  _____  \|___   ___|/  _____  \ "
+echo "| |     |_|    | |    | /     \ || |\ \        / /| || |     \ \ | /     \ |    | |    | /     \ | "
+echo "| |_______     | |    | |_____| || | \ \      / / | || |      | || |_____| |    | |    | |_____| | "
+echo "|_______  |    | |    |  _____  || |  \ \    / /  | || |      | ||  _____  |    | |    |  _____  | "
+echo " _      | |    | |    | |     | || |   \ \  / /   | || |      | || |     | |    | |    | |     | | "
+echo "| |_____| | ___| |___ | |     | || |    \ \/ /    | || |_____/ / | |     | |    | |    | |     | | "
+echo "|_________||_________||_|     |_||_|     \__/     |_||________/  |_|     |_|    |_|    |_|     |_| "
+echo ""
+echo "Welcome to System Installation Program on Unix And Linux"
+echo ""
+main_menu
+##END WELCOME MESSAGE##
+#######################
